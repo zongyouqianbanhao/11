@@ -21,6 +21,6 @@ public @Test void testCreateCoreXml() {
     c_xml.setTbRuleArray("#userinfo_id|email_hash# % 1024 % 32");
     c_xml.setSqlPath("classpath:properties/sqlFile.properties");
     /* 执行配置文件输出 */
-    System.out.println(c_xml.createCoreXml(new File("e:/kratos-context.xml")) ? "create success" : "create fial");
+    System.out.println(c_xml.createCoreXml(new File("e:/shark-context.xml")) ? "create success" : "create fial");
 }
 ```
