@@ -1,1 +1,1 @@
-Welcome to the shark wiki!
+点击右侧pags
