@@ -41,7 +41,7 @@
 ## 非片名连续的一库一片算法：
 假设dbSize是1024，tbSize是1024，那么每一个库的片数为1024/1024=1，在此大家需要注意，非片名连续的一库一片算 法，所有片名无需后缀(比如tb_0000)，也就是说，有1024个库，即有1024个片，但片名是全局一致的，没有任何后缀，全局所有的片名都叫做 tab。 
 
-片名连续的一库一片算法配置：
+非片名连续的一库一片算法配置：
 ```Xml
 <property name="consistent" value="false" />
 <property name="dbRuleArray" value="#userinfo_test_id|email_hash# % 16" />
