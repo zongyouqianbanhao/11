@@ -4,6 +4,7 @@
 ![](http://dl.iteye.com/upload/picture/pic/133859/e114f4fc-3788-3e5d-9103-def32509b1c9.jpg)
 
 Shark的领域模型定位介于持久层和JDBC之间。之前笔者曾经提及过，Shark是站在巨人的肩膀上，这个巨人正是Spring。简单来 说，Shark重写了JdbcTemplate，并使用了Spring提供的AbstractRoutingDataSource作为动态数据源层。因 此从另外一个侧面反应了Shark的源码注定是简单、轻量、易阅读、易维护的，因为Shark的核心只做分库分表。我们知道一般的Shading中间 件，动不动就几万行代码，其中得“猫腻”有很多，不仅数据库连接池要自己写、动态数据源要自己写，再加上一些杂七杂八的功能，比如：通用性支持、多种类型 的RDBMS或者Nosql支持，那么代码自然冗余，可读性极差。而Shark仅仅只会考虑如何通过Sharding规则实现数据路由。Shark的3层架构，如下所示：
+
 ![](http://dl.iteye.com/upload/picture/pic/133889/274e2a9c-c0ce-3c25-a17a-f1f914ca4667.jpg)
 
 既然Shark只考虑最核心的功能，同时也就意味着它的性能恒定指标还需要结合其他第三方产品，比如Shark的动态数据源层所使用的 ConnectionPool可以为C3P0，也可以为BonePC。你别指望Shark还能为你处理边边角角的零碎琐事，想要什么效果，自行组合配 置，这就是Shark，一个简单、轻量级的Sharding中间件。Shark的应用总体架构，如下所示：
