@@ -1,5 +1,5 @@
 1、源码的下载与编译
-由于shark目前并没有提交到maven的中央仓库，因此开发人员只能够从https://github.com/gaoxianglong/shark.git中下载shark的源码，使用命令package -Dmaven.test.skip=true -Pdev将其编译为jar构件，项目中我们在大部分情况下只需用到shark-core包，如果希望使用基于zookeeper的集中式资源配置中心，那么还需要在工程中引用shark-resource包。
+由于shark目前并没有提交到maven的中央仓库，因此开发人员只能够从https://github.com/gaoxianglong/shark.git 中下载shark的源码，使用命令package -Dmaven.test.skip=true -Pdev将其编译为jar构件，项目中我们在大部分情况下只需用到shark-core包，如果希望使用基于zookeeper的集中式资源配置中心，那么还需要在工程中引用shark-resource包。
 
 2、配置sharding规则
 ```Xml
@@ -95,3 +95,6 @@
 @Resource
 private SharkJdbcTemplate jdbcTemplate;
 ```
+
+注意：
+除了批量读/写的batch()方法外，SharkJdbcTemplate支持Spring JdbcTemplate的所有方法。
