@@ -41,7 +41,7 @@
 			</map>
 		</property>
 	</bean>
-	<bean id="dataSource1" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	<bean id="dataSource1" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="user" value="${name}" />
 		<property name="password" value="${password}" />
 		<property name="jdbcUrl" value="jdbc:mysql://ip:3306/db_0000" />
@@ -68,4 +68,4 @@ private SharkJdbcTemplate jdbcTemplate;
 SharkJdbcTemplate jdbcTemlate = GetJdbcTemplate.getSharkJdbcTemplate();
 ```
 
-在此大家需要注意，目前shark的配置中心仅支持c3p0的数据源配置(druid由于自身原因，目前有一些问题暂时没处理好)；
+在此大家需要注意，数据源务必要配置参数destroy-method="close"，否则监听到配置中心发生变化后，将不会释放之前持有的数据库连接；
