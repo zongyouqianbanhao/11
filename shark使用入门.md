@@ -37,7 +37,7 @@
 </bean>
 ```
 
-具体参数含义请见wiki。
+关于其他sharding规则、以及参数含义请见wiki。
 
 3、配置数据源
 ```Xml
@@ -89,7 +89,7 @@
 </bean>
 ```
 
-具体参数含义请见wiki。
+关于其他sharding规则、以及参数含义请见wiki。
 
 4、使用SharkJdbcTemplate
 ```Java
