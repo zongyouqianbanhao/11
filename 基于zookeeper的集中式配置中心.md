@@ -2,7 +2,6 @@
 
 2、然后shark的配置文件定义如下：
 ```Xml
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -19,15 +18,11 @@
 			expression="org.aspectj.lang.annotation.Aspect" />
 	</context:component-scan>
 	<context:property-placeholder location="classpath*:*.properties" />
-	<bean class="com.gxl.shark.resources.zookeeper.ZookeeperConnectionManager"
+	<bean class="com.gxl.shark.resources.conn.ZookeeperConnectionManager"
 		init-method="init">
 		<constructor-arg index="0" value="${address}" />
 		<constructor-arg index="1" value="${session.timeout}" />
-		<constructor-arg index="2" ref="dataSourceBean" />
-	</bean>
-	<bean id="dataSourceBean" class="com.gxl.shark.resources.zookeeper.DataSourceBean">
-		<property name="nodePath" value="${nodepath}" />
-		<property name="dataSourceSize" value="2" />
+		<constructor-arg index="2" value="${nodepath}" />
 	</bean>
 	<bean id="jdbcTemplate" class="com.gxl.shark.core.shard.SharkJdbcTemplate">
 		<constructor-arg name="isShard" value="true" />
@@ -41,10 +36,11 @@
 			</map>
 		</property>
 	</bean>
-	<bean id="dataSource1" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	<bean id="dataSource1" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
 		<property name="user" value="${name}" />
 		<property name="password" value="${password}" />
-		<property name="jdbcUrl" value="jdbc:mysql://ip:3306/db_0000" />
+		<property name="jdbcUrl" value="jdbc:mysql://120.24.75.22:3306/db_0000" />
 		<property name="driverClass" value="${driverClass}" />
 		<property name="initialPoolSize" value="${initialPoolSize}" />
 		<property name="minPoolSize" value="${minPoolSize}" />
