@@ -1,4 +1,4 @@
-```Xml
+```Shell
             ### welcome to use shark-benchmark ###
             ###     shark benchmark result     ###
 #################################################################
