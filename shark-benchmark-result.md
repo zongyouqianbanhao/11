@@ -4,7 +4,6 @@ shark-benchmark github:https://github.com/gaoxianglong/shark_benchmark
 ############### welcome to use shark-benchmark ##################
 ###############     shark benchmark result     ##################
 #################################################################
-
 -----------------------------------------------------------------
 [threadSize:10]                                                 
 [taskSize:10000]                                                
