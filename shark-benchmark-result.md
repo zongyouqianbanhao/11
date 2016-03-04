@@ -1,5 +1,5 @@
 shark-benchmark github:https://github.com/gaoxianglong/shark_benchmark
-```Shell
+```txt
 #################################################################
 ############### welcome to use shark-benchmark ##################
 ###############     shark benchmark result     ##################
