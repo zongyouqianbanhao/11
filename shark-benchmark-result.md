@@ -1,7 +1,7 @@
 shark-benchmark github:https://github.com/gaoxianglong/shark_benchmark
-```Shell
-            ### welcome to use shark-benchmark ###
-            ###     shark benchmark result     ###
+```Java
+############### welcome to use shark-benchmark ##################
+###############     shark benchmark result     ##################
 #################################################################
 [threadSize:10]
 [taskSize:10000]
