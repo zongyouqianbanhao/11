@@ -53,14 +53,14 @@ shark-benchmark github:https://github.com/gaoxianglong/shark_benchmark
 #################################################################
 [threadSize:10]
 [taskSize:10000]
-[shard-type:片名连续的一库一片(db:4,tab:4),operation:writ]
+[shard-type:非片名连续的一库一片(db:4,tab:4),operation:writ]
 [2016-03-04 14:17:01 677 INFO ] 总共写入耗时-->6s
 [2016-03-04 14:17:01 678 INFO ] 每秒写入次数-->1666.6666666666667
 [2016-03-04 14:17:01 678 INFO ] 平均写入耗时-->6ms
 -----------------------------------------------------------------
 [threadSize:10]
 [taskSize:10000]
-[shard-type:片名连续的一库一片(db:4,tab:4),operation:read]
+[shard-type:非片名连续的一库一片(db:4,tab:4),operation:read]
 [2016-03-04 14:17:07 667 INFO ] 总共读取耗时-->5s
 [2016-03-04 14:17:07 668 INFO ] 每秒读取次数-->2000.0
 [2016-03-04 14:17:07 668 INFO ] 平均读取耗时-->5ms
