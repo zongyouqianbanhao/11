@@ -25,6 +25,8 @@
 		init-method="init">
 		<constructor-arg index="0" value="${redis.key}" />
 		<constructor-arg index="1" ref="jedisCluster" />
+		<!-- 0使用版本号比对,1使用MD5校验,缺省为0 -->
+		<constructor-arg index="2" value="0" />
 	</bean>
 	<!-- 配置redis连接池 -->
 	<bean id="jedisPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">
@@ -75,9 +77,9 @@
 
 大家需要注意，尽管shark所持有相关的数据源以及sharding规则都配置在redis中，但是本地配置文件中仍然需要持有一个缺省数据源，当然这并不影响shark后续从资源中心拉到最新的资源数据进行更替。
 
-上述配置文件中参数${redis.key}中需要制定redis的key，数据结构为“key-value(version,resource)”，value中最重要的就是版本号version，当配置中心发生改变时，需要修改当前版本号，shark的配置中心客户端会根据版本差异判断是否是更新了配置中心的数据。
+上述配置文件中参数${redis.key}中需要制定redis的key，如果为“0”，数据结构为“key-value(version%@%resource)”，value中最重要的就是版本号version，当配置中心发生改变时，需要修改当前版本号，shark的配置中心客户端会根据版本差异判断是否是更新了配置中心的数据。如果为“1”，则不需要指定版本号，shark会根据md5码进行检查配置中心的配置信息是否发生了改变。
 
-3、一旦使用zookeeper作为配置中心后，程序中就不要在使用下述代码获取SharkJdbcTemplate，如下所示：
+3、一旦使用redis作为配置中心后，程序中就不要在使用下述代码获取SharkJdbcTemplate，如下所示：
 ```Java
 @Resource
 private SharkJdbcTemplate jdbcTemplate;
