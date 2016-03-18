@@ -5,7 +5,7 @@ Shark提供了一个内置验证页面用于对执行后的sql进行验证。
 <!-- Shark的sql内置验证页面 -->
 <servlet>
 	<servlet-name>queryViewServlet</servlet-name>
-	<servlet-class>com.gxl.shark.util.web.http.QueryViewServlet</servlet-class>
+	<servlet-class>com.sharksharding.util.web.http.QueryViewServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>queryViewServlet</servlet-name>
