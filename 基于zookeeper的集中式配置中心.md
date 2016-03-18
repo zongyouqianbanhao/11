@@ -18,7 +18,7 @@
 			expression="org.aspectj.lang.annotation.Aspect" />
 	</context:component-scan>
 	<context:property-placeholder location="classpath*:*.properties" />
-	<bean class="com.gxl.shark.resources.conn.ZookeeperConnectionManager"
+	<bean class="com.sharksharding.resources.conn.ZookeeperConnectionManager"
 		init-method="init">
 		<constructor-arg index="0" value="${address}" />
 		<constructor-arg index="1" value="${session.timeout}" />
