@@ -1,4 +1,4 @@
-com.gxl.shark.core.shard.SharkJdbcTemplate是Shark提供的一个Jdbc模板，它继承自Spring的JdbcTemplate。简单来说，SharkJdbcTemplate几乎支持JdbcTemplate的所有原生方法(除批量操作外)。对于开发人员而言，只需要将Spring的JdbcTemplate替换为Shark的SharkJdbcTemplate即可，除此之外，业务逻辑代码中不再有任何的侵入。
+com.sharksharding.core.shard.SharkJdbcTemplate是Shark提供的一个Jdbc模板，它继承自Spring的JdbcTemplate。简单来说，SharkJdbcTemplate几乎支持JdbcTemplate的所有原生方法(除批量操作外)。对于开发人员而言，只需要将Spring的JdbcTemplate替换为Shark的SharkJdbcTemplate即可，除此之外，业务逻辑代码中不再有任何的侵入。
 
 一般来说，数据库的主从配置，既可以一主一从，也可以一主多从，但目前Shark仅支持一主一从。Shark一主一从读写分离配置，如下所示：
 ```Xml
@@ -10,12 +10,12 @@ com.gxl.shark.core.shard.SharkJdbcTemplate是Shark提供的一个Jdbc模板，�
 		expression="org.aspectj.lang.annotation.Aspect" />
 </context:component-scan>
 <!-- 读写分离配置 -->
-<bean id="jdbcTemplate" class="com.gxl.shark.core.shard.SharkJdbcTemplate">
+<bean id="jdbcTemplate" class="com.sharksharding.core.shard.SharkJdbcTemplate">
 	<constructor-arg name="isShard" value="false" />
 	<property name="dataSource" ref="dataSourceGroup" />
 	<property name="wr_index" value="r1w0" />
 </bean>
-<bean id="dataSourceGroup" class="com.gxl.shark.core.config.SharkDatasourceGroup">
+<bean id="dataSourceGroup" class="com.sharksharding.core.config.SharkDatasourceGroup">
 	<property name="targetDataSources">
 		<map key-type="java.lang.Integer">
 			<entry key="0" value-ref="dataSource1" />
@@ -23,7 +23,7 @@ com.gxl.shark.core.shard.SharkJdbcTemplate是Shark提供的一个Jdbc模板，�
 		</map>
 	</property>
 </bean>
-<bean class="com.gxl.shark.sql.PropertyPlaceholderConfigurer">
+<bean class="com.sharksharding.sql.PropertyPlaceholderConfigurer">
 	<constructor-arg name="path" value="classpath:sql.properties" />
 </bean>
 ```
