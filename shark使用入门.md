@@ -7,12 +7,12 @@
 <import resource="datasource1-context.xml" />
 <aop:aspectj-autoproxy proxy-target-class="true" />
 <!-- 自动扫描 -->
-<context:component-scan base-package="com.gxl.shark">
+<context:component-scan base-package="com.sharksharding">
 	<context:include-filter type="annotation"
 		expression="org.aspectj.lang.annotation.Aspect" />
 </context:component-scan>
 <!-- 片名连续的库内分片配置 -->
-<bean id="jdbcTemplate" class="com.gxl.shark.core.shard.SharkJdbcTemplate">
+<bean id="jdbcTemplate" class="com.sharksharding.core.shard.SharkJdbcTemplate">
 	<constructor-arg name="isShard" value="true" />
 	<property name="dataSource" ref="dataSourceGroup" />
 	<property name="wr_index" value="r0w0" />
@@ -24,7 +24,7 @@
 	<property name="tbRuleArray" value="#userinfo_test_id|email_hash# % 4 % 2" />
 	<property name="tbSuffix" value="_0000" />
 </bean>
-<bean id="dataSourceGroup" class="com.gxl.shark.core.config.SharkDatasourceGroup">
+<bean id="dataSourceGroup" class="com.sharksharding.core.config.SharkDatasourceGroup">
 	<property name="targetDataSources">
 		<map key-type="java.lang.Integer">
 			<entry key="0" value-ref="dataSource1" />
