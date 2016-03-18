@@ -25,7 +25,7 @@ public @Test void getSequenceId() {
 }
 ```
 
-上述程序示例中，首先需要调用com.gxl.shark.util.sequence.DbConnectionManager类的 init()方法对数据源进行初始化，然后调用DbConnectionManager类的 getSequenceId()方法即可成功获取全局唯一的sequenceId。在此大家需要注意，Shark生成的sequenceId是一个 17-19位之间的整型，在getSequenceId()方法中，第一个参数为IDC机房编码，第二个参数为类型操作码，而最后一个参数非常关键，就是 需要向DB中申请的内存占位数量(自增码)。
+上述程序示例中，首先需要调用com.sharksharding.shark.util.sequence.DbConnectionManager类的 init()方法对数据源进行初始化，然后调用DbConnectionManager类的 getSequenceId()方法即可成功获取全局唯一的sequenceId。在此大家需要注意，Shark生成的sequenceId是一个 17-19位之间的整型，在getSequenceId()方法中，第一个参数为IDC机房编码，第二个参数为类型操作码，而最后一个参数非常关键，就是 需要向DB中申请的内存占位数量(自增码)。
 
 简单来说，相信大家都知道，既然业务库都分库分表了，就是为了缓解数据库读写瓶颈，当并发较高时，一个生成sequenceId的通用数据库能扛得 住吗？扛得住！关键就是因为内存占位。其实原理很简单，当第一次应用从Id生成器中去拿sequenceId时，Id生成器会锁表并将数据库字段 s_useData更新为5000，那么第二次应用从Id生成器中去拿sequenceId时，将不会与DB建议物理会话链接，而是直接在内存中去消耗着 5000内存占位数，直至消耗殆尽时，才会重新去数据库中申请下一次的内存占位。
 
