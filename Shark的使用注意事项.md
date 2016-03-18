@@ -11,7 +11,7 @@
 
 在某些情况下，我们可能不太希望将sql耦合在我们的业务代码中，这种情况下，Kratos提供有类似于Mybatis的做法，将sql定义在配置 文件中。Kratos采用的做法很简单，sql信息定义在properties文件中，采用key-value的方式，key建议定义为持久层的方法名 称。sql写法为：addUser=insert into userinfo(uid,name) values(?,?)，配置方式，如下所示：
 ```Xml
-<bean class="com.gxl.kratos.sql.PropertyPlaceholderConfigurer">
+<bean class="com.sharksharding.sql.PropertyPlaceholderConfigurer">
     <constructor-arg name="path" value="classpath:sql.properties" />
 </bean>
 ```
