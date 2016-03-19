@@ -14,6 +14,8 @@
     <servlet-api-version>2.5</servlet-api-version>
     <fastjson-version>1.2.5</fastjson-version>
     <junit-version>4.7</junit-version>
+    <zookeeper-version>3.4.6</zookeeper-version>
+    <jedis.version>2.6.2</jedis.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties>
 ```
