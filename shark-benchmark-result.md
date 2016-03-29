@@ -1,4 +1,4 @@
-下述是1.3.8的shark-benchmark压测结果，新版本暂时没有时间上压测，但理论上更快。
+下述是1.3.8的shark-benchmark压测结果，新版本暂时没有时间上压测，但理论上来说会更快。
 
 shark-benchmark github:https://github.com/gaoxianglong/shark_benchmark
 ```shell
