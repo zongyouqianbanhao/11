@@ -2,6 +2,6 @@
 <dependency>
     <groupId>com.sharksharding</groupId>
     <artifactId>shark</artifactId>
-    <version>1.3.8</version>
+    <version>1.4.0.RELEASE</version>
 </dependency>
 ```
