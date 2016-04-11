@@ -1,3 +1,0 @@
-Shark缺省并没有提供HA机制，但是可以在生产或测试环境中，使用Keepalived、MHA等方式来实现高可用。如果业务场景不允许在主从切换过程中出现少量数据的丢失，那么建议使用MHA等方式。
-
-如果使用Keepalived实现HA，那么在Shark的配置中需要将Master绑定VIP（VirtualIP，虚拟IP）地址，而Slave绑定真实的物理IP地址即可。当Master的实例挂了以后，Keepalived可以实现自动将ip飘到Slave上。
