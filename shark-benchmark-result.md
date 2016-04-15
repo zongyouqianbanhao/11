@@ -1,8 +1,8 @@
 压测环境，如下所示：<br>
-- OS:linux Red Hat 4.8.2-16<br>
-- CPU:AMD A10-6700<br>
-- Memory:2GB<br>
-- Mysql Version:5.6.30<br>
+- OS：linux Red Hat 4.8.2-16<br>
+- CPU：AMD A10-6700<br>
+- Memory：2GB<br>
+- Mysql Version：5.6.30<br>
 
 下述是shark1.4.1版本的benchmark结果，如下所示：
 
