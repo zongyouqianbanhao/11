@@ -1,6 +1,9 @@
-下述是1.4.1的shark-benchmark压测结果。
-测试机器配置信息如下：
-![](http://dl.iteye.com/upload/picture/pic/135439/13a0e5a4-adfd-35bd-9ee2-542efcd1fb05.jpg)
+压测机配置，如下所示：<br>
+操作系统:linux Red Hat 4.8.2-16<br>
+CPU:AMD A10-6700<br>
+内存:2GB<br>
+
+下述是shark1.4.1版本的benchmark压测结果，如下所示：
 
 ```shell
 #################################################################
