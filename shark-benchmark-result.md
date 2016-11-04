@@ -2,7 +2,7 @@
 
 压测环境，如下所示：<br>
 - OS：Linux CentOS7
-- CPU： 4 Core Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz <br>
+- CPU： 4-Core Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz <br>
 - Memory：4GB<br>
 - Disk：阿里云云盘<br>
 - Mysql Version：5.6.30<br>
