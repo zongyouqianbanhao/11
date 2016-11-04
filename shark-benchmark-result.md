@@ -1,10 +1,10 @@
-**根据压测结果来看，使用Shark后，SQL的性能损耗相当于在JDBC的执行效率上乘0.9**
+**根据压测结果来看，使用Shark后，SQL的性能损耗相当于在JDBC的基础上乘0.9**
 
 压测环境，如下所示：<br>
-- OS：Linux Red Hat 4.8.2-16<br>
-- CPU：AMD A10-6700<br>
-- Memory：2GB<br>
-- Disk：阿里云云盘
+- OS：Linux CentOS7
+- CPU： 4 Core Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz <br>
+- Memory：4GB<br>
+- Disk：阿里云云盘<br>
 - Mysql Version：5.6.30<br>
 
 JDBC的benchmark结果，如下所示：
